@@ -35,14 +35,17 @@ while True:
 	input_state = GPIO.input(18)
 	dac1.set_voltage(int(dac1_data[point]*scalar1))
 	dac2.set_voltage(int(dac2_data[point]*scalar2))
-	print (dac1_data[x], dac2_data[point])
+	print (point, int(dac1_data[point]), int(dac2_data[point]))
 	#time.sleep(1)
 
 	if input_state == False:
-		step =+1
-			if step > 10
-				step = 1
-		print(step)
+		step = step + 5
 		time.sleep(0.2)
+		if step > 100:
+			step = 1
+		print(step)
 		
 	point = point + step
+	if point >= data_range:
+		point = 0
+

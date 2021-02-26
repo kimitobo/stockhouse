@@ -1,4 +1,3 @@
-y
 # STOCKHOUSE
 import pandas
 import quandl
